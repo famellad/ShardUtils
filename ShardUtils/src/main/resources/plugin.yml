@@ -1,6 +1,6 @@
 name: ShardUtils
 main: com.gmail.famellad.shardutils.ShardUtils
-version: 0.1.0
+version: 0.1.1
 description: Standard utilities and functions for the Shard server.
 load: STARTUP
 author: famellad@gmail.com

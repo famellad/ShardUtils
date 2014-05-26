@@ -39,8 +39,8 @@ public class TimeSync extends BukkitRunnable {
 		
 		if (realTime > sunrise && realTime < sunset) { // Should be daytime!
 			// Line through (sunrise, 6000) and (12000, 12000)
-			double a = 6000d/((double)sunrise-12000d);
-			double b = -(12000d*((double)sunrise-6000d))/((double)sunrise-12000);
+			double a = -6000d/((double)sunrise-12000d);
+			double b = (-12000d*((double)sunrise-6000d))/(12000d-(double)sunrise);
 			time = (long)(a*(double)realTime+b);
 		}
 		else if (realTime <= sunrise) {
