@@ -50,7 +50,7 @@ public class TimeSync extends BukkitRunnable {
 		}
 		else if (realTime >= sunset) {
 			double a = 6000d/(double)sunrise;
-			double b = (24000d*((double)sunrise-18000d))/((double)sunrise-24000);
+			double b = (24000d*((double)sunset-18000d))/((double)sunset-24000);
 			time = (long)(a*(double)realTime+b);
 		}
 		//Bukkit.getLogger().info("realTime: " + realTime + ", svTime: " + time );
