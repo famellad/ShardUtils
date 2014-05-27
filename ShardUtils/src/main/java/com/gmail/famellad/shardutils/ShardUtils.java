@@ -25,6 +25,11 @@ public class ShardUtils extends JavaPlugin {
 		// Make sure DaylightCycle is false
 		//getServer().getWorld("world").setGameRuleValue("doDaylightCycle", "false");
 		
+		// Calculate the sunrise and sunset for current day
+		Ephemeris.updateDay();
+		this.getLogger().info("Sunrise: " + Ephemeris.getSunrise());
+		this.getLogger().info("Sunset:  " + Ephemeris.getSunset());
+		
 		// Create a scheduler to sync time
 		BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
 		TimeSync timeTask = new TimeSync(this);
@@ -41,6 +46,7 @@ public class ShardUtils extends JavaPlugin {
 		
 	}
 	
+	// Listener register function
 	Listener[] listenerList;
 	private void registerListener(Listener... listeners) {
 		PluginManager manager = getServer().getPluginManager();
